@@ -1,32 +1,32 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
     <router-view/>
   </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+  export default {
 
-#nav {
-  padding: 30px;
-}
+  }
+  // 引入rem实现自适应布局，比如font-size=20px，当屏幕尺寸进行放大或缩小时font-size也能相应的进行变换
+  // 实现步骤
+  // 1.添加一个全局事件当在DOM加载完成后回调此方法
+  document.addEventListener('DOMContentLoaded',() => {
+      // 2. 获取根元素
+      const html = document.querySelector('html')
+      // 设置fontSize值为屏幕宽度的十分之一
+      let fontSize = window.innerWidth / 10
+      // 给fontSize设置上限值
+      fontSize = fontSize > 50 ? 50 : fontSize
+      // 3.设置根元素的font-size
+      html.style.fontSize = fontSize + 'px'
+  })
+</script>
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+<style lang="scss" scoped>
+  #app {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
 </style>
