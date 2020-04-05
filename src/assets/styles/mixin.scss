@@ -1,0 +1,31 @@
+/* 缩放比例 */
+$ratio: 375 / 10;
+
+/*将px转为rem*/
+@function px2rem($px) {
+  @return $px / $ratio + rem;
+}
+
+@mixin left{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+@mixin center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin right{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+@mixin ellipsis{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}

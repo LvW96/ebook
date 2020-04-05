@@ -8,11 +8,13 @@ import './assets/styles/icon.css'
 // import './assets/fonts/daysOne.css'
 /*引入global.scss*/
 import './assets/styles/global.scss'
+import i18n from './lang'
 
 Vue.config.productionTip = false
 
 new Vue({
   router,
   store,
+  i18n,
   render: h => h(App)
 }).$mount('#app')
