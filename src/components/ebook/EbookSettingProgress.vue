@@ -47,15 +47,16 @@
     mixins: [ebookMixin],
     computed:{
       getSectionName(){
-        if (this.section){
+        /*if (this.section){
           // 根据章节数获得当前章节的信息
           const sectionInfo = this.currentBook.section(this.section)
-          if (sectionInfo && sectionInfo.href){
+          if (sectionInfo && sectionInfo.href && this.currentBook && this.currentBook.navigation){
             // 获得当前章节的名称
             return this.currentBook.navigation.get(sectionInfo.href).label
             // console.log(this.currentBook.navigation.get(sectionInfo.href))
           }
-        }
+        }*/
+        return this.section ? this.navigation[this.section].label : ''
       }
     },
     methods: {
@@ -121,7 +122,7 @@
       // 获取阅读时间方法
       getReadTimeText(){
         // 通过调用国际化中的book对象中的haveRead，然后将中间的$1替换为真实的时间，通过getReadTimeByMinute
-        return this.$t('book.haveRead').replace('$1',this.getReadTimeByMinute())
+        return this.$t(`book.haveRead`).replace(`$1`,this.getReadTimeByMinute())
       },
       // 将阅读时间转换为分钟
       getReadTimeByMinute(){
@@ -148,7 +149,7 @@
     position: absolute;
     bottom: px2rem(48);
     left: 0;
-    z-index: 101;
+    z-index: 160;
     width: 100%;
     height: px2rem(90);
     background: white;

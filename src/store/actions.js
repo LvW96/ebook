@@ -31,6 +31,51 @@ const actions = {
   },
   'setSection': ({commit}, section) => {
     return commit('SET_SECTION', section)
+  },
+  'setCover': ({commit}, cover) => {
+    return commit('SET_COVER', cover)
+  },
+  'setMetaData': ({commit}, metadata) => {
+    return commit('SET_METADATA', metadata)
+  },
+  'setNavigation': ({commit}, navigation) => {
+    return commit('SET_NAVIGATION', navigation)
+  },
+  'setOffsetY': ({commit}, offsetY) => {
+    return commit('SET_OFFSETY', offsetY)
+  },
+  'setIsBookmark': ({commit}, isBookmark) => {
+    return commit('SET_IS_BOOKMARK', isBookmark)
+  },
+  'setPageList': ({commit}, pageList) => {
+    return commit('SET_PAGE_LIST', pageList)
+  },
+  'setPaginate': ({commit}, paginate) => {
+    return commit('SET_PAGINATE', paginate)
+  },
+  'setHotSearchOffsetY': ({commit}, hotSearchOffsetY) => {
+    return commit('SET_HOT_SEARCH_OFFSETY', hotSearchOffsetY)
+  },
+  'setFlapCardVisible': ({commit}, flapCardVisible) => {
+    return commit('SET_FLAP_CARD_VISIBLE', flapCardVisible)
+  },
+  'setIsEditMode':({ commit }, isEditMode) => {
+    return commit('SET_IS_EDIT_MODE', isEditMode)
+  },
+  'setShelfList':({ commit }, shelfList) => {
+    return commit('SET_SHELF_LIST', shelfList)
+  },
+  'setShelfSelected':({ commit }, selected) => {
+    return commit('SET_SHELF_SELECTED', selected)
+  },
+  'setShelfTitleVisible':({ commit }, visible) => {
+    return commit('SET_SHELF_TITLE_VISIBLE', visible)
+  },
+  'setShelfCategory':({ commit }, shelfCategory) => {
+    return commit('SET_SHELF_CATEGORY', shelfCategory)
+  },
+  'setCurrentType':({ commit }, currentType) => {
+    return commit('SET_CURRENT_TYPE', currentType)
   }
 }
 export default actions

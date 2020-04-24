@@ -25,6 +25,7 @@
   <!--引入主题设置面板-->
   <ebook-setting-theme></ebook-setting-theme>
   <ebook-setting-progress></ebook-setting-progress>
+  <ebook-slide></ebook-slide>
   </div>
 </template>
 
@@ -38,6 +39,8 @@
   import EbookSettingTheme from '../../components/ebook/EbookSettingTheme'
   // 引入进度条设置面板
   import EbookSettingProgress from '../../components/ebook/EbookSettingProgress'
+  // 引入整个目录蒙板
+  import EbookSlide from '../../components/ebook/EbookSlide'
 
   export default {
     methods: {
@@ -54,7 +57,9 @@
       // 注册主题设置面板
       EbookSettingTheme,
       // 注册进度条面板
-      EbookSettingProgress
+      EbookSettingProgress,
+      // 注册目录蒙板
+      EbookSlide,
     }
   }
 </script>
@@ -66,7 +71,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    z-index: 102;
+    z-index: 200;
     width: 100%;
     height: px2rem(48);
     display: flex;

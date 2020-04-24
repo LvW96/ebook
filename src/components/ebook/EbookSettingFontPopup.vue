@@ -7,7 +7,7 @@
         <div class="ebook-popup-title-icon" @click="hide">
           <span class="icon-down2"></span>
         </div>
-        <span class="ebook-popup-title-text">{{$t('book.selectFont')}}</span>
+        <span class="ebook-popup-title-text">{{$t(`book.selectFont`)}}</span>
       </div>
       <!--字体选择列表-->
       <div class="ebook-popup-list-wrapper">

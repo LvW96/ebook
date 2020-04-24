@@ -84,3 +84,36 @@ export function saveReadTime(fileName,time) {
 export function getReadTime(fileName) {
   return getBookObject(fileName,'time')
 }
+
+export function getMetadata(fileName) {
+  return getBookObject(fileName, 'metadata')
+}
+
+export function saveMetadata(fileName, metadata) {
+  setBookObject(fileName, 'metadata', metadata)
+}
+
+// 获取书签
+export function getBookmark(fileName) {
+  return getBookObject(fileName, 'bookmark')
+}
+// 保存书签
+export function saveBookmark(fileName, bookmark) {
+  setBookObject(fileName, 'bookmark', bookmark)
+}
+// 保存书架信息
+export function saveBookShelf(shelf) {
+  return setLocalStotage('shelf', shelf)
+}
+// 获取书架信息
+export function getBookShelf() {
+  return getLocalStorage('shelf')
+}
+
+export function getHome() {
+  return getLocalStorage('home')
+}
+
+export function saveHome(home) {
+  return setLocalStotage('home', home, 1800)
+}

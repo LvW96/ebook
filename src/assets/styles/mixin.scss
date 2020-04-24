@@ -1,3 +1,8 @@
+/*定义动画显示的时间*/
+$animationTime: .2s;
+/*定义动画显示的类型*/
+$animationType:linear;
+
 /* 缩放比例 */
 $ratio: 375 / 10;
 
@@ -28,4 +33,77 @@ $ratio: 375 / 10;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+}
+
+@mixin ellipsis2($line){
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp:$line;
+  white-space:normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: keep-all;
+}
+
+.icon{
+  color: #666;
+  font-size: px2rem(16);
+}
+
+.title{
+  color: #666;
+  font-size: px2rem(16);
+  font-weight: bold;
+}
+
+@mixin columnLeft{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+@mixin absoluteCenter{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+@mixin columnTop{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+@mixin top{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+@mixin columnLeft {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+@mixin columnCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin scroll{
+  overflow-x: hidden;/*x轴不允许滚动*/
+  overflow-y: scroll;/*y轴允许滚动*/
+  -webkit-overflow-scrolling: touch;
+  &::-webkit-scrollbar{
+    display: none;
+  }
 }

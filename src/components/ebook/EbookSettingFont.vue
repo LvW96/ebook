@@ -67,7 +67,7 @@
     position: absolute;
     bottom: px2rem(48);
     left: 0;
-    z-index: 101;
+    z-index: 160;
     display: flex;
     flex-direction: column;/* 元素的排列方向 */
     width: 100%;

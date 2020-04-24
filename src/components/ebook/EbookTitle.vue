@@ -10,12 +10,12 @@
     </div>
     <!--右边包括一个书架图标、购物车图标和更多图标-->
     <div class="right">
-      <div class="icon-wrapper">
+      <div class="icon-wrapper" @click="shelf">
         <span class="icon-shelf"></span>
       </div>
-      <div class="icon-wrapper">
+      <!--<div class="icon-wrapper">
         <span class="icon-cart"></span>
-      </div>
+      </div>-->
       <div class="icon-wrapper">
         <span class="icon-more"></span>
       </div>
@@ -31,7 +31,12 @@
   mixins:[ebookMixin],
     methods:{
       back(){
-        console.log('ok')
+        this.$router.go(-1)
+      },
+      shelf(){
+        this.$router.push({
+          path:'/store/shelf',
+        })
       }
     }
   }
@@ -43,7 +48,7 @@
     position: absolute;
     top:0;
     left: 0;
-    z-index: 101;
+    z-index: 210;
     display: flex;
     width: 100%;
     height: px2rem(48);

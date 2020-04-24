@@ -11,6 +11,13 @@ const book = {
     progress:0,
     bookAvailable:false,
     section:0, // 章节信息
+    cover:null,// 封面
+    metadata: null,// 作者，标题
+    navigation:null,// 目录
+    offsetY:0,// y轴的偏移量
+    isBookmark:null, // 当前页是否为书签页
+    pageList: null,// 页数
+    paginate: '',// 显示分页信息
   },
   mutations: {
     'SET_FILE_NAME': (state, fileName) => {
@@ -45,7 +52,28 @@ const book = {
     },
     'SET_SECTION': (state, section) => {
       state.section = section
-    }
+    },
+    'SET_COVER': (state, cover) => {
+      state.cover = cover
+    },
+    'SET_METADATA': (state, metadata) => {
+      state.metadata = metadata
+    },
+    'SET_NAVIGATION': (state, navigation) => {
+      state.navigation = navigation
+    },
+    'SET_OFFSETY': (state, offsetY) => {
+      state.offsetY = offsetY
+    },
+    'SET_IS_BOOKMARK': (state, isBookmark) => {
+      state.isBookmark = isBookmark
+    },
+    'SET_PAGE_LIST': (state, pageList) => {
+      state.pageList = pageList
+    },
+    'SET_PAGINATE': (state, paginate) => {
+    state.paginate = paginate
+    },
   }
 }
 // 将book对象作为模块输出
